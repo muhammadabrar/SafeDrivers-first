@@ -1,0 +1,43 @@
+.comit{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 20rem;
+    background-color: #dfdfdf;
+}
+
+.comit-wrap{
+    width: 140rem;
+    height: 15rem;
+    background-color: #fff;
+    position: absolute;
+  box-shadow: #00000039 0px 0px 8px 0px;
+ top: -20%;
+ z-index: 1;
+ border-radius: .5rem;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+.comit-item{
+    width: 35rem;
+    height: 8rem;
+    border-right: #eee 1px solid;
+    text-align: center;
+}
+.comit-item:last-child{
+    border-right: none;
+}
+.comit-item h2{
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    
+}
+
+.comit-item p{
+    font-size: 1.4rem;
+    margin-top: .5rem;
+    color: rgb(120, 120, 120);
+
+}
