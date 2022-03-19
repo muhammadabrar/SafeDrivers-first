@@ -72,7 +72,7 @@ export default function Intro() {
               )}
             </li>
           </ul>
-          <button className="go-down">
+          <button className="go-down" href="#services">
             <MobileDownload32 />
           </button>
           <ol className="carousel-indicators">

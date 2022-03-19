@@ -1,6 +1,6 @@
 import {ArrowRight16, Menu32, Close32, ArrowDown16} from '@carbon/icons-react';
 import {useState, useEffect} from 'react';
-export default function Nav() {
+export default function Nav(props) {
     const [y, setY] = useState(0);
     const handleNavigation = (e) => {
         const window = e.currentTarget;
@@ -23,6 +23,7 @@ export default function Nav() {
           window.removeEventListener("scroll", (e) => handleNavigation(e));
         };
       }, [y]);
+      console.log(props.active);
   return (
     <>
 
@@ -33,24 +34,24 @@ export default function Nav() {
           <h2 className="logo"><span>Smart</span>SafeDrivers </h2>
           <input type="checkbox" id="chk" />
           <label for="chk" className="show-menu-btn">
-            <i className="fas fa-ellipsis-h"><Menu32 /></i>
+            <i><Menu32 /></i>
           </label>
 
           <ul className="menu">
-            <div className="menu-item active">
-              <a href="#">Home  </a><i><ArrowDown16 /></i>
+            <div className={props.active == "home"? "menu-item active": "menu-item"}>
+              <a href="/">Home  </a>{props.active == "home"?<i><ArrowDown16 /></i>:<i><ArrowRight16 /></i>}
             </div>
-            <div className="menu-item">
-              <a href="#">Services  </a> <i><ArrowRight16 /></i>
+            <div className={props.active == "services"? "menu-item active": "menu-item"}>
+              <a href="/services">Services  </a>{props.active == "services"?<i><ArrowDown16 /></i>:<i><ArrowRight16 /></i>}
             </div>
-            <div className="menu-item">
-              <a href="#">Pricing</a><i><ArrowRight16 /></i>
+            <div className={props.active == "pricing"? "menu-item active": "menu-item"}>
+              <a href="/pricing">Pricing</a>{props.active == "pricing"?<i><ArrowDown16 /></i>:<i><ArrowRight16 /></i>}
             </div>
-            <div className="menu-item">
-              <a href="#">Contact Us</a><i><ArrowRight16 /></i>
+            <div className={props.active == "contact"? "menu-item active": "menu-item"}>
+              <a href="/contact">Contact Us</a>{props.active == "contact"?<i><ArrowDown16 /></i>:<i><ArrowRight16 /></i>}
             </div>
             <label for="chk" className="hide-menu-btn">
-              <i className="fas fa-times"><Close32 /></i>
+              <i><Close32 /></i>
             </label>
             
           </ul>
