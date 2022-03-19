@@ -25,10 +25,12 @@ export default function Nav() {
       }, [y]);
   return (
     <>
-      <header className={y >= 200 ? "header fill": "header"} >
+
+      <header className={`header ${y>200&& 'fill'} `}>
 
         <nav className="nav">
-          <h2 className="logo"><span>Smart</span>SafeDrivers</h2>
+          
+          <h2 className="logo"><span>Smart</span>SafeDrivers </h2>
           <input type="checkbox" id="chk" />
           <label for="chk" className="show-menu-btn">
             <i className="fas fa-ellipsis-h"><Menu32 /></i>
@@ -48,15 +50,18 @@ export default function Nav() {
               <a href="#">Contact Us</a><i><ArrowRight16 /></i>
             </div>
             <label for="chk" className="hide-menu-btn">
-              
               <i className="fas fa-times"><Close32 /></i>
             </label>
             
           </ul>
          
         </nav>
+        {/* <span className="header-bottom-line"></span> */}
+          
       </header>
-      
+  
+
+
     </>
   );
 }

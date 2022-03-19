@@ -1,3 +1,4 @@
+
 header {
   position: fixed;
   z-index: 2;
@@ -15,9 +16,12 @@ header {
   -moz-transition: background-color 0.2s ease-out;
   -o-transition: background-color 0.2s ease-out;
   transition: all 0.2s ease-out;
+  z-index: 997;
+  box-shadow: #00000039 0px 5px 8px 0px;
+
   /* border-bottom: #888 1px solid; */
 }
-.header-bottom-line {
+/* .header-bottom-line {
   width: 100%;
   position: absolute;
   top: 7.5rem;
@@ -25,20 +29,19 @@ header {
   height: 2px;
   background-color: #242121;
   transition: all 0.2s ease-out;
-}
-.header.fill .header-bottom-line {
-  top: 6rem;
-  z-index: -1;
-  height: 2px;
-}
+} */
 .header.fill{
   background-color: #242121;
   height: 6.8rem;
   color: #fff;
 }
-
+.top-bar{
+  width: 100vw;
+  height: 5rem;
+  background-color: #000;
+}
 .nav {
-  width: 140rem;
+  width: 90%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -56,13 +59,15 @@ header {
   display: flex;
 }
 .menu-item {
-  border-right: #fff 2px solid;
-  height: 2.8rem;
+  border-right: #c1c1c1 1px solid;
+  height: 2rem;
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.6rem;
   display: flex;
   align-items: center;
   padding: 0 2rem;
+  color: #fff;
+
   /* margin-left: 1rem; */
 }
 .menu-item:nth-child(4){
@@ -72,15 +77,18 @@ header {
   padding-left: 1rem;
   font-size: 1rem;
   padding-top: .5rem;
+  
 }
 .menu-item.active,
-.menu-item.active a {
+.menu-item.active a ,.menu-item.active a i{
   color: var(--primary);
+  font-weight: 700;
   /* border-color: var(--primary); */
 }
 .menu-item:hover,
 .menu-item:hover a {
   color: var(--primary);
+  
   /* border-color: var(--primary); */
 }
 /* .menu-item.active a{
@@ -112,8 +120,23 @@ header {
   visibility: hidden;
   z-index: -1111;
 }
+@media screen and (max-width: 1000px)and (min-width: 801px) {
+  .header{
+    height: 10rem;
+  }
+  .header.fill{
+    background-color: #242121;
+    height: 12rem;
+    color: #fff;
+  }
+  .nav {
+    flex-direction: column;
+    justify-content: space-around;
 
+  }
+}
 @media screen and (max-width: 800px) {
+  
   :root{
     font-size: 50%;
   }
